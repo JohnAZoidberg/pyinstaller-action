@@ -77,6 +77,9 @@ runs:
     
     - name: Checkout repository
       uses: actions/checkout@v3
+      with:
+        # Avoid cleaning resources that we want to include in the bundle
+        clean: false
     
     - name: (Install) dependencies
       if: inputs.requirements != ''
